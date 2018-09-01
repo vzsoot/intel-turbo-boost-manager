@@ -1,0 +1,8 @@
+[Unit]
+Description=Intel TurboBoost Manager
+
+[Service]
+ExecStart=/usr/bin/thermal.sh
+
+[Install]
+WantedBy=multi-user.target
