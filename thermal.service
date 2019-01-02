@@ -1,5 +1,6 @@
 [Unit]
 Description=Intel TurboBoost Manager
+After=systemd-modules-load.service
 
 [Service]
 ExecStart=/usr/bin/thermal.sh

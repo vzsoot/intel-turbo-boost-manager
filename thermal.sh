@@ -25,6 +25,7 @@ function turbo-boost-ctl() {
 
 turbo-boost-ctl enable
 state=1
+check_counter=1
 while true; do
     val=$(sensors | awk '/CPU/ {print $2}')
     max="+90.0"
@@ -38,6 +39,11 @@ while true; do
 	echo "Enable turbo-boost at temp: ${val}"
 	turbo-boost-ctl enable
 	state=1
+    fi
+
+    check_counter=$((check_counter+1))
+    if [ $(( $check_counter % 60 )) == 0 ]; then
+	echo "CPU sensor temperature value: ${val}"
     fi
     sleep 1
 done
