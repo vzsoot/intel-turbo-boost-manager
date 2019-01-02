@@ -5,6 +5,7 @@ Use at your own risk.
 # Install
 * Secure boot needs to be disabled in BIOS (at your own risk)
 * Install msr-tools tools
+* Install msr kernel module
 * Run the install.sh script
 
 # Notes
